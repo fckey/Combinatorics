@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+%opening
+\title{《利用鸽巢定理反证Erdős–Szekeres定理》}
+\author{方绍雷 416100210234}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\setcounter{page}{1} % 设置当前页的开始 
+\pagenumbering{arabic}
+\renewcommand{\abstractname}{问题描述}
+\section{问题描述}
+If m and n are non-negative integers, then any sequence of
+m * n+1 distinct real numbers either has an increasing subsequence of
+m + 1 terms, or it has a decreasing subsequence of n + 1 terms.
+\section{证明思路}
+利用鸽巢定理的反证法：m,n 都为非负整数，假设m * n+1个不同实数最多含有长度为m递增序列项或者是长度n递减子序列的项。由鸽巢定理导出矛盾，证明原命题。
+\section{具体证明}
+对于任意不同m * n+1的实数集合。
+
+假设序列为：$ x_{1}, x_{2},...,x_{k},....x_{m*n+1} $(m * n + 1个不同的实数)
+
+令$ g_{k} $为序号从 1 到$ k $（包括$ k $）的递增子序列长度。
+
+令$ f_{k} $为序号从 1 到$ k $（包括$ k $）的递减子序列长度。
+
+对于每个实数$ x_{k} $,都有一一对应的序列对: $ (g_{k},f_{k}) $表示实数$ x_{k} $的递增子序列和递减子序列长度。
+
+则对于每个数字，都可以得出(1)中的m * n+1个序列对。
+\begin{equation}
+	(g_{1},f_{1}),(g_{2},f_{2}),...,(g_{m*n+1},f_{m*n+1})
+\end{equation}
+而对于前提假设所知：$ 1\leq g_{k} \leq m, 1\leq f_{k} \leq n$,
+
+根据排列组合得，一共有 $ m*n $种组合方式，而(1)中有$ m*n + 1$个序列对。由鸽巢定理所知，说明(1)中至少有两个序列对完全相同。
+
+设相同的序列对为$ (g_{i},f_{i}),(g_{j},f_{j}) $
+
+假设序列对重复对应数字项为$ x_{i}, x_{j}$, $ i \neq j $,由于m * n+1的实数为不同实数。
+所以 $ x_{i}, x_{j}$为不同的两个实数。
+
+易知有两种情况：
+	
+	当 $ x_{i} < x_{j} $时，由于  $ x_{i} < x_{j} $，得$ x_{i} $的最长递增子序列数目小于$ x_{j} $
+	
+	当 $ x_{i} > x_{j}$时，由于 $ x_{i} > x_{j} $，得$ x_{i} $ 的最长递减子序列数目小于$ x_{j} $
+	
+	所以，综上证得$ (g_{i},f_{i}),(g_{j},f_{j}) $相同的结论不成立！矛盾
+
+所以结论m * n+1个不同实数最多含有长度为m递增序列项或者是长度n递减子序列的项不成立。
+对于m * n + 1个不同实数，如果有小于m个递增子序列或者小于n个递减子序列，由鸽巢定理所得，则（1）中序列对中一定有重复。不合题意。
+
+所以，当 $ 1\leq g_{k} \leq m + 1 $ 或者是 $ 1\leq f_{k} \leq n + 1$时，(1)中不存在重复，即由$ m * n + 1$个实数构成的不同实数序列，一定存在 m + 1个递增或者 n + 1个递减。
+
+
+
+
+
+\end{document}
