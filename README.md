@@ -13,6 +13,6 @@
 具体问题描述，在每个homework中都有说明。
 
 - homework 1 - 第一次作业 （武士数独/五连数独/重叠数独）问题求解。
-- homework 2 - 
+- homework 2 - 第二次作业 利用鸽巢定理反证Erdős–Szekeres 定理
 --------
 
